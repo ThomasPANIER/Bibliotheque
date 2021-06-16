@@ -1,6 +1,7 @@
 <?php
 
 require "model/dataBase.php";
+require "model/entity/book.php";
 
 class BookManager {
 
@@ -35,13 +36,21 @@ class BookManager {
   }
 
   // Récupère un livre
-  public function getBook() {
-
+  public function getBook($id) {
+    $query = $this->db->prepare("SELECT * FROM Livre ");
+    $query->execute([
+      "id" => $id
+  ]);
+    $book = $query->fetch(PDO::FETCH_ASSOC);
+    if ($book) {
+      $book = new Book($book);
+  }
+    return $book;
   }
 
   // Ajoute un nouveau livre
   public function addBook() {
-
+  
   }
 
   // Met à jour le statut d'un livre emprunté
