@@ -1,6 +1,15 @@
 <?php
 
-class userManager {
+require "model/dataBase.php";
+
+class UserManager {
+
+  protected PDO $db;
+
+  function __construct()
+  {
+    $this->db = DataBase::bddConnect();
+  }
 
   // Récupère tous les utilisateurs
   public function getUsers() {
