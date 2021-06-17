@@ -20,8 +20,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -33,7 +33,7 @@
 
     <header class="bg-primary p-4 rounded-lg mb-5">
 
-      <section class="container-fluid">      
+      <section class="container-fluid text-center">      
         <h1>Bibliothèque munipale</h1>
         <hr class="bg-info">
         <p>La culture de nos administrés est une priorité</p>

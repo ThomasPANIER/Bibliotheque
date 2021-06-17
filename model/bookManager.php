@@ -37,25 +37,65 @@ class BookManager {
 
   // Récupère un livre
   public function getBook($id) {
-    $query = $this->db->prepare("SELECT * FROM Livre ");
+    $query = $this->db->prepare("SELECT * FROM Livre WHERE id=:id");
     $query->execute([
       "id" => $id
   ]);
     $book = $query->fetch(PDO::FETCH_ASSOC);
     if ($book) {
       $book = new Book($book);
-  }
+    }
     return $book;
   }
 
   // Ajoute un nouveau livre
-  public function addBook() {
+  public function addBook(Book $book) : bool {
+    $query = $this->db->prepare(
+      "INSERT INTO Livre(nom, auteur, categorie, synopsis, statut)
+      VALUES (:nom, :auteur, :categorie, :synopsis, 1)"
+    );
   
+    $result = $query->execute([
+      "nom" => $book->getNom(),
+      "auteur" => $book->getAuteur(),
+      "categorie" => $book->getCategorie(),
+      "synopsis" => $book->getSynopsis()
+    ]);
+    return $result;
   }
 
   // Met à jour le statut d'un livre emprunté
   public function updateBookStatus() {
-
+  
   }
+
+  // met a jour le statut pour rendre un livre
+  public function returnBook ($id) {
+    $query = $this->db->prepare(
+      "UPDATE Livre
+      SET statut = 1
+      WHERE id=:id"
+    );
+    $query->execute(["id" => $id]);
+    return $query;
+  }
+
+  // met a jour le statut pour emprunter un livre
+  public function rentBook ($id) {
+    $query = $this->db->prepare(
+      "UPDATE Livre
+      SET statut = 0
+      WHERE id=:id"
+    );
+    $query->execute(["id" => $id]);
+    return $query;
+  }
+
+  // Supprime un livre
+  public function deleteBook($id) {
+    $query = $this->db->prepare("DELETE FROM Livre WHERE id=:id");
+    $query->execute(["id" => $id]);
+    return $query;
+}
 
 }

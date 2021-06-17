@@ -81,7 +81,4 @@ class Book {
         return $this->date_pret;
     }
 
-    
-
-
 }

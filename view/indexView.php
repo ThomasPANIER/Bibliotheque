@@ -19,16 +19,16 @@
                             <li class="list-group-item"><?php echo "Titre : " . $book->getNom() ; ?></li>
                             <li class="list-group-item"><?php echo "Auteur : " . $book->getAuteur() ; ?></li>
                             <li class="list-group-item"><?php echo "Catégorie : " . $book->getCategorie() ; ?></li>
-                            <li class="list-group-item"><?php echo "Synopsis : " . $book->getSynopsis() ; ?></li>
-                            <li class="list-group-item"><?php echo "Statut : " . $book->getStatut() ; ?></li>
-                            <li class="list-group-item"><?php echo "Livre emprunté par : " . $book->getLecteur_id() ; ?></li>
-                            <li class="list-group-item"><?php echo "Date de prêt : " . $book->getDate_pret() ; ?></li>
-
+                            <?php if (!$book->getStatut()) : ?>
+                                <li class="list-group-item text-danger"><?php echo "Disponibilité : Non disponible"  ?></li>
+                            <?php else : ?>
+                                <li class="list-group-item text-success"><?php echo "Disponibilité : Disponible"  ?></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                     <div class="card-footer">
                         <div class=" row justify-content-evenly">
-                            <a class="btn btn-primary col-3 p-1" href="book.php?id=<?php echo $book->getId() ; ?>">Voir</a>
+                            <a class="btn btn-primary col-3 p-1" href="singleBook.php?id=<?php echo $book->getId() ; ?>">Voir</a>
                         </div>
                     </div>
                 </div>
