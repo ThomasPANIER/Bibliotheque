@@ -1,7 +1,6 @@
 
-
 <?php
-
+require "model/dataBase.php";
 require "model/bookManager.php";
 
 $bookManager = new BookManager();

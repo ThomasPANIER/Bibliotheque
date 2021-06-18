@@ -1,9 +1,9 @@
 
 
-    <footer class="bg-primary text-center">
+    <footer class="bg-primary text-center p-4">
         <section class="row justify-content-center">
             <a class="p-3" href="index.php" title="Page d'accueil"><img id="logo_footer" alt="logo bibliothèque" src=""></a>
-            <p>A la bibliotheque municipale, nous prêtons sans préjugés, même aux illétrés.</p>
+            <p class="fs-5">A la bibliotheque municipale, nous prêtons sans préjugés, même aux illétrés.</p>
         </section>
     </footer>
 

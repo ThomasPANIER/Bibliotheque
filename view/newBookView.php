@@ -7,7 +7,7 @@
 
         <div class="col-12 col-md-6 p-5">
 
-            <h2>Enregistrer un nouveau livre</h2>
+            <h2 class="text-center">Enregistrer un nouveau livre</h2>
             
             <form class="mt-5" action="newBook.php" method="POST">
                 <div class="mt-3">

@@ -36,7 +36,7 @@
       <section class="container-fluid text-center">      
         <h1>Bibliothèque munipale</h1>
         <hr class="bg-info">
-        <p>La culture de nos administrés est une priorité</p>
+        <p class="fs-5">La culture de nos administrés est une priorité</p>
       </section>
 
     </header>

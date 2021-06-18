@@ -13,18 +13,18 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
+          <a class="nav-link active fs-5" aria-current="page" href="index.php">Accueil</a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Gérer
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="newBook.php">Ajouter un livre</a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="users.php">Lecteurs enregistrés</a></li>
-          <li><a class="dropdown-item" href="user.php">Ajouter un lecteur</a></li>
+          <li><a class="dropdown-item" href="newUser.php">Ajouter un lecteur</a></li>
           </ul>
         </li>
 

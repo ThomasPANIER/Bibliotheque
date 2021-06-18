@@ -1,6 +1,5 @@
 <?php
 
-require "model/dataBase.php";
 require "model/entity/book.php";
 
 class BookManager {
@@ -27,7 +26,7 @@ class BookManager {
 
   // Récupère tous les livres
   public function getBooks() {
-    $query = $this->db->query("SELECT * FROM Livre ");
+    $query = $this->db->query("SELECT * FROM Livre");
     $books = $query->fetchAll(PDO::FETCH_ASSOC);
     foreach($books as $key => $book) {
       $books[$key] = new Book($book);
@@ -48,13 +47,32 @@ class BookManager {
     return $book;
   }
 
+  
+  // Récupère un livre et son utilisateur
+  public function getUserBook($id) {
+    $query = $this->db->prepare(
+      "SELECT Livre.*, Lecteur.*
+      -- SELECT Livre.*, Lecteur.nom, Lecteur.prenom, CONVERT(Lecteur.carte_numero, int)
+      FROM Livre
+      LEFT JOIN Lecteur
+      ON Livre.lecteur_id = Lecteur.id
+      WHERE Livre.id = :id");
+    $query->execute([
+      "id" => $id
+    ]);
+    $data = $query->fetch(PDO::FETCH_ASSOC);
+    if ($data) {
+      $userBook = new User($data);
+      return $userBook;
+    }
+  }
+
   // Ajoute un nouveau livre
   public function addBook(Book $book) : bool {
     $query = $this->db->prepare(
       "INSERT INTO Livre(nom, auteur, categorie, synopsis, statut)
       VALUES (:nom, :auteur, :categorie, :synopsis, 1)"
     );
-  
     $result = $query->execute([
       "nom" => $book->getNom(),
       "auteur" => $book->getAuteur(),

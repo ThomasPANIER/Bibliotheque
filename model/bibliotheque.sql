@@ -20,7 +20,7 @@ CREATE TABLE Lecteur (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(50) NOT NULL,
     prenom VARCHAR(50) NOT NULL,
-    carte_numero INT(10) NOT NULL
+    carte_numero INT(6) UNIQUE NOT NULL
 )
 ENGINE=InnoDB;
 

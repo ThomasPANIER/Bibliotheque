@@ -1,6 +1,6 @@
 <?php
 // Controlleur qui gérer l'affichage de tous les livres
-
+require "model/dataBase.php";
 require "model/bookManager.php";
 
 $books = new BookManager();

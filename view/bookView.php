@@ -16,9 +16,15 @@
                             <li class="list-group-item"><?php echo "Auteur : " . $showBook->getAuteur() ; ?></li>
                             <li class="list-group-item"><?php echo "Catégorie : " . $showBook->getCategorie() ; ?></li>
                             <li class="text-justify list-group-item"><?php echo "Synopsis : " . $showBook->getSynopsis() ; ?></li>
-                            <li class="list-group-item"><?php echo "Statut : " . $showBook->getStatut() ; ?></li>
-                            <li class="list-group-item"><?php echo "Livre emprunté par : " . $showBook->getLecteur_id() ; ?></li>
-                            <li class="list-group-item"><?php echo "Date de prêt : " . $showBook->getDate_pret() ; ?></li>
+                            <?php if (!$showBook->getStatut()) : ?>
+                                <li class="list-group-item text-danger"><?php echo "Disponibilité : Non disponible"  ?></li>
+                            <?php else : ?>
+                                <li class="list-group-item text-success"><?php echo "Disponibilité : Disponible"  ?></li>
+                            <?php endif; ?>
+                            <?php if ($showBook->getLecteur_id()) : ?>
+                            <li class="list-group-item"><?php echo "Livre emprunté par : " . $userBook->getPrenom() . " " . $userBook->getNom() ; ?></li>
+                            <li class="list-group-item"><?php echo "Carte numéro : " . $userBook->getCarte_numero() ; ?></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                     <div class="card-footer">
@@ -58,14 +64,12 @@
 
         </div>
 
-    <?php else : ?>
-    
+    <?php else : ?>    
         <div class="alert alert-secondary text-center" role="alert">
             <?php echo $error; ?>
             <p>Pourquoi ne pas retourner a l'accueil</p>
             <a class="btn btn-dark text-white" href="index.php">Accueil</a>
         </div>
-
     <?php endif; ?>
 
 </div>

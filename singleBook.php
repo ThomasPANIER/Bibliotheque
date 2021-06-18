@@ -1,14 +1,17 @@
 <?php
 
 // Controleur qui gère l'affichage du détail d'un livre
-
+require "model/dataBase.php";
 require "model/bookManager.php";
+require "model/userManager.php";
 
 $bookManager = new BookManager();
+$userManager = new UserManager();
 
 if(isset($_GET["id"]) && !empty($_GET["id"])) {
   
     $showBook = $bookManager->getBook($_GET["id"]);
+    $userBook = $bookManager->getUserBook($_GET["id"]);
     // var_dump($book);
     if(!$showBook) {
         $error = "Le livre sélectionné n'existe pas, essayez une nouvelle sélection.";
