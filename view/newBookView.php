@@ -12,7 +12,7 @@
             <form class="mt-5" action="newBook.php" method="POST">
                 <div class="mt-3">
                     <label class="form-label">Nom</label>
-                    <input class="form-control my-3 p-3" name="nom" type="text">
+                    <input class="form-control my-3 p-3" name="titre" type="text">
                     <?php if(isset($error1)) : ?>
                         <aside class="text-danger"><?php echo $error1; ?></aside>
                     <?php endif; ?>

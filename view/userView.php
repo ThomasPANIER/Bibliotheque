@@ -17,7 +17,7 @@
                         <li class="list-group-item"><?php echo "Nom : " . $showUser->getNom() ; ?></li>
                         <li class="list-group-item"><?php echo "Numéro de carte : " . $showUser->getCarte_numero() ; ?></li>
                         <?php if ($bookUser) : ?>
-                        <li class="list-group-item"><?php echo "Livre emprunté : " . $bookUser->getNom() ; ?></li>
+                        <li class="list-group-item"><?php echo "Livre emprunté : " . $bookUser->getTitre() ; ?></li>
                         <li class="list-group-item"><?php echo "Date de prêt : " . $bookUser->getDate_pret() ; ?></li>
                         <?php else : ?>
                                 <li class="list-group-item"><?php echo "Pas d'emprunt en cours."  ?></li>
@@ -38,8 +38,8 @@
             <?php else : ?>
                 <form class="row justify-content-around" method="POST" action="">
                     <input class="btn btn-primary col-6 p-1" name="return" type="submit" value="Rendre le livre">
-                    <?php if ($_POST["return"]) : ?>
-                        <li class="list-group-item"><?php echo "Pas d'emprunt en cours."  ?></li>
+                    <?php if (isset($_POST["return"])) : ?>
+                        <a class="btn btn-dark text-white" href="index.php">Accueil</a>
                     <?php endif; ?>
                 </form>
             <?php endif; ?>

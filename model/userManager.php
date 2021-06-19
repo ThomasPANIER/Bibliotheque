@@ -47,11 +47,11 @@ class UserManager {
   // Récupère un utilisateur et son livre
   public function getBookUser($id) {
     $query = $this->db->prepare(
-      "SELECT Lecteur.*, Livre.nom, Livre.date_pret 
-      FROM Lecteur
-      LEFT JOIN Livre
-      ON Lecteur.id = Livre.lecteur_id
-      WHERE Livre.id = :id");
+      "SELECT Livre.*, Lecteur.*
+      FROM Livre
+      LEFT JOIN Lecteur
+      ON Livre.lecteur_id = Lecteur.id
+      WHERE Lecteur.id = :id");
     $query->execute([
       "id" => $id
     ]);
@@ -69,20 +69,21 @@ class UserManager {
       FROM Lecteur
       LEFT JOIN Livre
       ON Lecteur.id = Livre.lecteur_id
-      WHERE Livre.id = :id");
+      WHERE Lecteur.id = :id");
     $query->execute([
       "id" => $id
     ]);
     $data = $query->fetch(PDO::FETCH_ASSOC);
     $book = new Book($data);     
-    if($book->getLecteur_id() !== NULL) {
+    if($book->getLecteur_id()) {
       $query = $this->db->prepare(
         "UPDATE Livre
         SET statut = 1, lecteur_id = NULL, date_pret = NULL 
-        WHERE id=:id"
+        WHERE lecteur_id=:id"
       );
       $query->execute(["id" => $id]);
-      return $query;
+      $book = $query->fetch(PDO::FETCH_ASSOC);
+      return $book;
     }    
   }
 

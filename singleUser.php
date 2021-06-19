@@ -9,7 +9,7 @@ $userManager = new UserManager();
 $bookManager = new BookManager();
 
 if(isset($_GET["id"]) && !empty($_GET["id"])) {
-  
+    //$bookUser = $bookManager->getUserBook($_GET["id"]);
     $showUser = $userManager->getUserById($_GET["id"]);
     $bookUser = $userManager->getBookUser($_GET["id"]);
 
@@ -27,7 +27,7 @@ if(isset($_POST["return"])) {
     $bookUser = $userManager->updateBookReturn($_GET["id"]);
     
     if(!$bookUser) {
-        $error = "test1";
+        
     }
 
 }

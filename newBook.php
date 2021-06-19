@@ -10,8 +10,8 @@ if(!empty($_POST) && isset($_POST["addBook"])) {
     foreach($_POST as $key => $value) {
         $_POST[$key] = htmlspecialchars($value);
     }
-    if(empty($_POST["nom"])) {
-        $error1 = "Vous n'avez pas rentré de nom";
+    if(empty($_POST["titre"])) {
+        $error1 = "Vous n'avez pas rentré de titre";
     }
     else {
         $error1 = false;

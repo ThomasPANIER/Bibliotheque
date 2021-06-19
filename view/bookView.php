@@ -12,7 +12,7 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><?php echo "Titre : " . $showBook->getNom() ; ?></li>
+                            <li class="list-group-item"><?php echo "Titre : " . $showBook->getTitre() ; ?></li>
                             <li class="list-group-item"><?php echo "Auteur : " . $showBook->getAuteur() ; ?></li>
                             <li class="list-group-item"><?php echo "Catégorie : " . $showBook->getCategorie() ; ?></li>
                             <li class="text-justify list-group-item"><?php echo "Synopsis : " . $showBook->getSynopsis() ; ?></li>

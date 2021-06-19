@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><?php echo "Titre : " . $book->getNom() ; ?></li>
+                            <li class="list-group-item"><?php echo "Titre : " . $book->getTitre() ; ?></li>
                             <li class="list-group-item"><?php echo "Auteur : " . $book->getAuteur() ; ?></li>
                             <li class="list-group-item"><?php echo "Catégorie : " . $book->getCategorie() ; ?></li>
                             <?php if (!$book->getStatut()) : ?>

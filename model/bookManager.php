@@ -70,11 +70,11 @@ class BookManager {
   // Ajoute un nouveau livre
   public function addBook(Book $book) : bool {
     $query = $this->db->prepare(
-      "INSERT INTO Livre(nom, auteur, categorie, synopsis, statut)
-      VALUES (:nom, :auteur, :categorie, :synopsis, 1)"
+      "INSERT INTO Livre(titre, auteur, categorie, synopsis, statut)
+      VALUES (:titre, :auteur, :categorie, :synopsis, 1)"
     );
     $result = $query->execute([
-      "nom" => $book->getNom(),
+      "titre" => $book->getTitre(),
       "auteur" => $book->getAuteur(),
       "categorie" => $book->getCategorie(),
       "synopsis" => $book->getSynopsis()
@@ -91,7 +91,7 @@ class BookManager {
   public function returnBook ($id) {
     $query = $this->db->prepare(
       "UPDATE Livre
-      SET statut = 1
+      SET statut = 1, lecteur_id = NULL, date_pret = NULL
       WHERE id=:id"
     );
     $query->execute(["id" => $id]);
@@ -102,7 +102,7 @@ class BookManager {
   public function rentBook ($id) {
     $query = $this->db->prepare(
       "UPDATE Livre
-      SET statut = 0
+      SET statut = 0, lecteur_id = ROUND(RAND()*9)+1, date_pret = NOW()
       WHERE id=:id"
     );
     $query->execute(["id" => $id]);
