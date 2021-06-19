@@ -1,9 +1,11 @@
 <?php
+
 // Classe représetant les livres stockés en base de données
+
 class Book {
 
     protected $id;
-    protected $nom;
+    protected $titre;
     protected $auteur;
     protected $categorie;
     protected $synopsis;
@@ -30,11 +32,11 @@ class Book {
         return $this->id;
     }
 
-    public function setNom(string $nom) {
-        $this->nom = $nom;
+    public function setTitre(string $titre) {
+        $this->titre = $titre;
     }
-    public function getNom() : string {
-        return $this->nom;
+    public function getTitre() : string {
+        return $this->titre;
     }
 
     public function setAuteur(string $auteur) {
@@ -78,8 +80,5 @@ class Book {
     public function getDate_pret() : string {
         return $this->date_pret;
     }
-
-    
-
 
 }
