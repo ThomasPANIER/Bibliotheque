@@ -37,6 +37,18 @@
                             <?php if ($showBook->getStatut()) : ?>
                             <form class="row justify-content-around" method="POST" action="">
                                 <input class="btn btn-primary col-6 p-1" name="rent" type="submit" value="Emprunter le livre">
+                                <?php if(isset($_POST["rent"])): ?>
+                                
+                                    <div class="mt-3">
+                                        <label class="form-label">Nom</label>
+                                        <input class="form-control my-3 p-3" name="id" type="number">
+                                        <?php if(isset($error1)) : ?>
+                                            <aside class="text-danger"><?php echo $error1; ?></aside>
+                                        <?php endif; ?>
+                                    </div>
+                                    <input class="btn btn-primary col-6 p-1" name="rentUser" type="submit" value="Enregistrer">
+                                
+                                <?php endif; ?>
                             </form>
                         <?php endif; ?>
                         </div>

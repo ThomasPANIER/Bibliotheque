@@ -48,6 +48,35 @@ else {
     $error = "test4";
 }
 
+// if(isset($_POST["rent"])) {
+
+//     if(!empty($_POST) && isset($_POST["rentUser"])) {
+
+//         $book = $bookManager->updateBookStatus($_GET["id"]);
+
+//         foreach($_POST as $key => $value) {
+//             $_POST[$key] = htmlspecialchars($value);
+//         }
+//         if(empty($_POST["id"])) {
+//             $error1 = "Vous n'avez pas rentré de id";
+//         }
+//         else {
+//             $error1 = false;
+//         }
+        
+//         if(!$error1) {
+            
+//             $book = new Book($_POST);
+
+//             if($bookManager->updateBookStatus($book)) {
+//                 header("Location:index.php");
+//                 exit;
+//             }
+//         }
+
+//     }
+// }
+
 if(isset($_POST['confirm'])) {
     $book = $bookManager->deleteBook($_GET["id"]);
     // var_dump($book);

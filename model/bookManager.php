@@ -83,9 +83,25 @@ class BookManager {
   }
 
   // Met à jour le statut d'un livre emprunté
-  public function updateBookStatus() {
-  
-  }
+  // public function updateBookStatus($id) {
+  //   $query = $this->db->prepare(
+  //     // "UPDATE B
+  //     //   SET B.statut = 0, B.lecteur_id = U.id, B.date_pret = NOW() 
+  //     //   FROM Livre AS B
+  //     //   INNER JOIN Lecteur AS U ON B.lecteur_id = U.id
+  //     //   WHERE U.id = :id" );
+  //     "UPDATE Livre
+  //     INNER JOIN Lecteur ON Livre.lecteur_id = Lecteur.id
+  //     SET Livre.lecteur_id = Lecteur.id
+  //     Where Lecteur.id = :id"
+  //   );
+  //   $query->execute([
+  //     "id" => $id
+  //   ]);
+  //   $data = $query->fetch(PDO::FETCH_ASSOC);
+  //   $book = new Book($data);     
+  //   return $book;
+  // }
 
   // met a jour le statut pour rendre un livre
   public function returnBook ($id) {
@@ -114,6 +130,6 @@ class BookManager {
     $query = $this->db->prepare("DELETE FROM Livre WHERE id=:id");
     $query->execute(["id" => $id]);
     return $query;
-}
+  }
 
 }
