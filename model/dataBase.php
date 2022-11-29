@@ -6,8 +6,8 @@ abstract class DataBase {
 
     const HOST  = "localhost";
     const NAME = "bibliotheque";
-    const LOGIN = "bibliothequePHP";
-    const PASSWORD = "bibliothequePHP76530";
+    const LOGIN = "root";
+    const PASSWORD = "";
 
     public static function bddConnect() {
         try {

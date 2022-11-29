@@ -9,7 +9,7 @@ $bookManager = new BookManager();
 if(isset($_GET["id"]) && !empty($_GET["id"])) {
   
     $book = $bookManager->getBook($_GET["id"]);
-    //var_dump($book);
+
     if(!$book) {
         $error = "Le livre sélectionné n'existe pas, essayez une nouvelle sélection.";
     }
