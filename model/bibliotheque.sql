@@ -10,10 +10,10 @@ USE bibliotheque;
 
 -- Création d'un utilisateur pour l'administration de la base bibliotheque.
 -- Suppression si existant de 'bibliothequePHP'@'localhost' avant une connexion ... 
-DROP USER IF EXISTS 'bibliothequePHP'@'localhost'; 
-CREATE USER 'bibliothequePHP'@'localhost' IDENTIFIED BY 'bibliothequePHP76530';
-GRANT USAGE ON *.* TO 'bibliothequePHP'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-GRANT ALL PRIVILEGES ON bibliotheque.* TO 'bibliothequePHP'@'localhost';
+-- DROP USER IF EXISTS 'bibliothequePHP'@'localhost';
+-- CREATE USER 'bibliothequePHP'@'localhost' IDENTIFIED BY 'bibliothequePHP76530';
+-- GRANT USAGE ON *.* TO 'bibliothequePHP'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+-- GRANT ALL PRIVILEGES ON bibliotheque.* TO 'bibliothequePHP'@'localhost';
 
 -- Création de la table Lecteur.
 CREATE TABLE Lecteur (

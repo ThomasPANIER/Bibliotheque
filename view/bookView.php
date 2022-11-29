@@ -41,7 +41,7 @@
                                 
                                     <div class="mt-3">
                                         <label class="form-label">Nom</label>
-                                        <input class="form-control my-3 p-3" name="id" type="number">
+                                        <input class="form-control my-3 p-3" name="nom" type="number">
                                         <?php if(isset($error1)) : ?>
                                             <aside class="text-danger"><?php echo $error1; ?></aside>
                                         <?php endif; ?>

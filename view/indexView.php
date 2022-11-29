@@ -1,5 +1,4 @@
 
-
 <?php include "view/template/header.php"; ?>
 
 <main class="container-fluid my-5">

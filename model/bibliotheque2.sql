@@ -10,10 +10,10 @@ USE bibliotheque2;
 
 -- Création d'un utilisateur pour l'administration de la base bibliotheque2.
 -- Suppression si existant de 'bibliotheque2PHP'@'localhost' avant une connexion ... 
-DROP USER IF EXISTS 'bibliotheque2PHP'@'localhost'; 
-CREATE USER 'bibliotheque2PHP'@'localhost' IDENTIFIED BY 'bibliotheque2PHP76530';
-GRANT USAGE ON *.* TO 'bibliotheque2PHP'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-GRANT ALL PRIVILEGES ON bibliotheque2.* TO 'bibliotheque2PHP'@'localhost';
+-- DROP USER IF EXISTS 'bibliotheque2PHP'@'localhost';
+-- CREATE USER 'bibliotheque2PHP'@'localhost' IDENTIFIED BY 'bibliotheque2PHP76530';
+-- GRANT USAGE ON *.* TO 'bibliotheque2PHP'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+-- GRANT ALL PRIVILEGES ON bibliotheque2.* TO 'bibliotheque2PHP'@'localhost';
 
 -- Création de la table Lecteur.
 CREATE TABLE Lecteur (

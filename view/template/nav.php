@@ -1,10 +1,9 @@
 
-
 <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-primary">
 
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="index.php" title="Page d'accueil"><img id="logo" alt="logo bibliothèque" src=""></a>
+    <a class="navbar-brand" href="index.php" title="Page d'accueil"><img id="logo" alt="logo bibliothèque" src="assets/img/library_logo2.png"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,24 +34,3 @@
   </div>
 
 </nav>
-<!-- <ul class="nav nav-tabs bg-primary sticky-top text-dark">
-  <li class="nav-item">
-    <a class="nav-link bg-primary text-dark" aria-current="page" href="index.php">Accueil</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link bg-primary text-dark" aria-current="page" href="newBook.php">Ajouter un livre</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle bg-primary text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Gérer les abonnés</a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="users.php">Lecteurs enregistrés</a></li>
-      <li><a class="dropdown-item" href="user.php">Ajouter un lecteur</li>
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul> -->

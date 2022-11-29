@@ -11,19 +11,6 @@ class BookManager {
     $this->db = DataBase::bddConnect();
   }
 
-  // function __construct()
-  // {
-  //     $this->setDb(DataBase::bddConnect());
-  // }
-
-  // public function setDb(PDO $connection) {
-  //     $this->db = $connection;
-  // }
-
-  // public function getDb() : PDO {
-  //     return $this->db;
-  // }
-
   // Récupère tous les livres
   public function getBooks() {
     $query = $this->db->query("SELECT * FROM Livre");
@@ -81,27 +68,6 @@ class BookManager {
     ]);
     return $result;
   }
-
-  // Met à jour le statut d'un livre emprunté
-  // public function updateBookStatus($id) {
-  //   $query = $this->db->prepare(
-  //     // "UPDATE B
-  //     //   SET B.statut = 0, B.lecteur_id = U.id, B.date_pret = NOW() 
-  //     //   FROM Livre AS B
-  //     //   INNER JOIN Lecteur AS U ON B.lecteur_id = U.id
-  //     //   WHERE U.id = :id" );
-  //     "UPDATE Livre
-  //     INNER JOIN Lecteur ON Livre.lecteur_id = Lecteur.id
-  //     SET Livre.lecteur_id = Lecteur.id
-  //     Where Lecteur.id = :id"
-  //   );
-  //   $query->execute([
-  //     "id" => $id
-  //   ]);
-  //   $data = $query->fetch(PDO::FETCH_ASSOC);
-  //   $book = new Book($data);     
-  //   return $book;
-  // }
 
   // met a jour le statut pour rendre un livre
   public function returnBook ($id) {
